@@ -1,13 +1,21 @@
 var slider1 = {
+    imagesUrls: [],
+    currentImageIndex: 0,
     prevBtn: document.getElementById('show-prev'),
     nextBtn: document.getElementById('show-next'),
     slideImage: document.getElementById('slide-img'),
-    imagesUrls: [],
-    currentImageIndex: 0,
+    
 
     start: function () {
-        this.prevBtn.addEventListener('click', this.onShowPrevBtnClick);
-        this.nextBtn.addEventListener('click', this.onShowNextBtnClick);
+        var that = this;
+
+        this.prevBtn.addEventListener('click', function(e) {
+            that.onShowNextBtnClick(e);
+        }); 
+        
+        this.nextBtn.addEventListener('click', function (e) {
+            that.onShowNextBtnClick(e);
+        });
 
 
         this.imagesUrls.push('https://www.kverner.ru/wp-content/uploads/2020/02/luchii-javascript-kursi.png');
