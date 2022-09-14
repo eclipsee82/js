@@ -10,7 +10,7 @@ var slider1 = {
         var that = this;
 
         this.prevBtn.addEventListener('click', function(e) {
-            that.onShowNextBtnClick(e);
+            that.onShowPrevBtnClick(e);
         }); 
         
         this.nextBtn.addEventListener('click', function (e) {
