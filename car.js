@@ -13,5 +13,4 @@ var car1 = {
 };
 
 car1.start();
-alert(car1.isTurnOn);
-alert(car1.speed);
+;

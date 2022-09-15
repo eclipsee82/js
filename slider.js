@@ -1,18 +1,24 @@
 var slider1 = {
     imagesUrls: [],
     currentImageIndex: 0,
-    prevBtn: document.getElementById('show-prev'),
-    nextBtn: document.getElementById('show-next'),
-    slideImage: document.getElementById('slide-img'),
-    
+    prevBtn: null,
+    nextBtn: null,
+    slideImage: null,
+
 
     start: function () {
         var that = this;
 
-        this.prevBtn.addEventListener('click', function(e) {
+        var el = document.querySelector('#slider1');
+
+        this.prevBtn = el.querySelector('.show-prev');
+        this.nextBtn = el.querySelector('.show-next');
+        this.slideImage = el.querySelector('.slide-img');
+
+        this.prevBtn.addEventListener('click', function (e) {
             that.onShowPrevBtnClick(e);
-        }); 
-        
+        });
+
         this.nextBtn.addEventListener('click', function (e) {
             that.onShowNextBtnClick(e);
         });
@@ -24,7 +30,6 @@ var slider1 = {
 
 
         this.slideImage.src = this.imagesUrls[this.currentImageIndex];
-
         this.prevBtn.disabled = true;
     },
 
