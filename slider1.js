@@ -6,10 +6,11 @@ var slider1 = {
     slideImage: null,
 
 
-    start: function () {
+    start: function (elId) {
         var that = this;
 
-        var el = document.querySelector('#slider1');
+        var elSelector = '#' + elId;
+        var el = document.querySelector(elSelector)
 
         this.prevBtn = el.querySelector('.show-prev');
         this.nextBtn = el.querySelector('.show-next');
